@@ -7,8 +7,11 @@ import Footer from "./Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Wang HaiLin",
-  description: "",
+  title: {
+    default: 'Wang HaiLin',
+      template: '%s | Wang HaiLin '},
+  keywords:"",
+  description: "The official personal site of Wang Hailin",
 };
 
 export default function RootLayout({
