@@ -1,43 +1,57 @@
 "use client";
-// the action is set as use serve in another file
+// this is rendered as frontend, the action is set as use server in another file
 import { useState } from "react";
 import { addForm } from "./addForm";
-import { FileInfo } from "@/lib/data";
-import { error } from "console";
+import { formInfo } from "@/lib/data";
 
 const WorkForm = () => {
-  const [form, setForm] = useState({});
-  // how to set it to be better
+  const [form, setForm] = useState<formInfo>({
+    name: "",
+    material: "",
+    addedYear: 0,
+    size: "",
+    img: "",
+  });
+  // update the form with the extracted information from file
   const extractFileInfo = () => {
-    let file = document.getElementById("file");
-    if (!file) {
+    let file = document.getElementById("file") as HTMLInputElement;
+    if (file.value === undefined) {
       throw Error("please upload the file first");
     }
     const path = file.value;
-    const fileName = path
-      .split(/(\\|\/)/g)
-      .pop()
-      .split(".");
-    const info = fileName[0].split(",");
+    const fileName = path.split(/(\\|\/)/g).pop() as String;
+    const fileOutEx = fileName.split(".");
+    const info = fileOutEx[0].split(",");
+    console.log(info);
+    if (info.length < 4) {
+      throw Error(
+        "Please make sure your filename follows the construction rule. Example: name,addedYear,material,size.img",
+      );
+    }
     setForm({
       name: info[0],
-      addedYear: info[1],
+      addedYear: Number(info[1]),
       material: info[2],
       size: info[3],
+      img: "waiting",
     });
-    console.log(form);
   };
-  const changeFormValue = (e) => {
+  // update the form with the information from user change
+  const changeFormValue = (e: {
+    target: { name: string; value: string | number };
+  }) => {
     let inputName = e.target.name;
     let inputValue = e.target.value;
     setForm({ ...form, [inputName]: inputValue });
-    console.log(form);
   };
 
   return (
+    // form information
     <form action={addForm}>
       <input type="file" name="file" id="file" required />
-      <button onClick={extractFileInfo}>提取信息</button>
+      <button type="button" onClick={extractFileInfo}>
+        提取信息
+      </button>
       <label htmlFor="name">作品名称:</label>
       <input
         type="text"

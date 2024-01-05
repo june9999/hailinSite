@@ -1,4 +1,4 @@
-export interface FileInfo {
+export interface fileInfo {
   size: number;
   type: string;
   name: string;
@@ -8,4 +8,12 @@ export interface FileInfo {
 
 export interface hasUrl {
   url: string;
+}
+
+export interface formInfo {
+  name: string | undefined;
+  material: string | undefined;
+  addedYear: number | undefined;
+  size: string | undefined;
+  img: string | undefined;
 }
