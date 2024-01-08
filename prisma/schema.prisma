@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url      = "mongodb+srv://wanghailin130:0QR5Zxw5e39DMjRO@cluster0.cn0pflz.mongodb.net/Site?retryWrites=true&w=majority"
+  url      = process.env.DATABASE_URL
 }
 
 model User {
