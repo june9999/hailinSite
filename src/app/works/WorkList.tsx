@@ -9,7 +9,7 @@ const WorkList = () => {
     const res = await fetch(args);
     return await res.json();
   };
-  const [data, loading, error] = useFetch("/works/api", customerFetch);
+  const [data, loading, error] = useFetch("apo/work", customerFetch);
   console.log(data);
   return <div>WorkList</div>;
 };
