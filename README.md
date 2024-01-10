@@ -3,8 +3,6 @@
 ## Status 
 - working on backend
 
-## Motivation
-
 ## Focus:
 - Prioritizing user experience with the consideration of other factors, such as security
 - Practice Next.js and TypeScript
