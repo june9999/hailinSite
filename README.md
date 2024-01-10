@@ -4,7 +4,7 @@
 - working on backend
 
 ## Focus:
-- Prioritizing user experience with the consideration of other factors, such as security
+- Prioritizing user experience 
 - Practice Next.js and TypeScript
 - Comparing different framework & rendering 
 - Improving code quality, error handling, and code reusability
