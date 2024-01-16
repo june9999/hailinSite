@@ -1,28 +1,30 @@
 "use client";
 import { CldUploadWidget } from "next-cloudinary";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export const SignedUpload = (): JSX.Element => {
-  const [resource, setResource] = useState<string | Object>();
-  const [tryResource, setTryResource] = useState<any[]>([]);
-  useEffect(() => {
-    if (!resource) {
-      setTryResource([]);
-    } else {
-      setTryResource([...tryResource, resource]);
-    }
-  }, [resource]);
+  const [resource, setResource] = useState<Object>();
+  const router = useRouter();
 
-  console.log(tryResource);
   return (
     <div className={`grid gap-6 ${resource ? "grid-cols-2" : "grid-cols-1"}`}>
       <CldUploadWidget
         //   Preset is a predefined setting in the user setting
         signatureEndpoint="/api/cloudinarySign"
         uploadPreset="hailinsite"
-        onSuccess={(result, { widget }) => {
+        onQueuesEnd={(result, { widget }) => {
           setResource(result?.info);
-          widget.close();
+          console.log(result);
+          router.push("/upload/checkpage");
+        }}
+        // onShowCompleted={() => {
+        // }}
+        options={{
+          sources: ["local", "url"],
+          // why language is not working?
+          language: "zh-CN",
+          showCompletedButton: true,
         }}
       >
         {/* we pass the whole function into the component ciduploadwidget */}
