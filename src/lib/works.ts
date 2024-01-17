@@ -1,17 +1,9 @@
 import prisma from "./db";
-export interface WorkInfo {
-  data: {
-    name: string;
-    material: string;
-    addedYear: number;
-    size: string;
-    img: string;
-  };
-}
+import { WorkInfo } from "@/lib/data";
 
 export const addData = async (WorkInfo: WorkInfo) => {
   try {
-    const res = await prisma.work.create(WorkInfo);
+    const res = await prisma.work.create({ data: WorkInfo });
     console.log("successfully created data" + res);
     return res;
   } catch (error) {

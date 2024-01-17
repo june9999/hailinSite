@@ -10,10 +10,10 @@ export interface hasUrl {
   url: string;
 }
 
-export interface formInfo {
+export interface WorkInfo {
   name: string | undefined;
   material: string | undefined;
   addedYear: number | undefined;
   size: string | undefined;
-  img: string | undefined;
+  imgUrl: string | undefined;
 }
