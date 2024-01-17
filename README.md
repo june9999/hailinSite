@@ -1,30 +1,36 @@
 <h1 align="center">Hailin Site</h1>
 
-## Status 
+## Status
+
 - working on backend
 
 ## Focus:
-- Prioritizing user experience 
+
+- Prioritizing user experience
 - Practice Next.js and TypeScript
-- Comparing different framework & rendering 
+- Comparing different framework & rendering
 - Improving code quality, error handling, and code reusability
 
 ## Tech/framework used
+
 <b>Built with</b>
+
 - [Nextjs](https://nextjs.org/)
 - Typerscript
 - mongoDB
 
- <b> Other Library</b>
+<b> Other Library</b>
+
 - [Prisma](https://www.prisma.io/)
 - [Cloudinary](https://cloudinary.com/guides/front-end-development/integrating-cloudinary-with-next-js)
-  
-## Planned  Main Features
+
+## Planned Main Features
+
 - backend
   - simplified and safe uploading
 - frontend
   - responsive
-  - ...   
+  - ...
 
 ## Getting Started
 
@@ -44,6 +50,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Sources
 
+Next Cloudinary
+https://next.cloudinary.dev/
 
 ## Deploy on Vercel
+
 This app is deployed with the use of the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
