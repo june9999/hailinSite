@@ -1,19 +1,24 @@
 "use client";
 import { CldUploadWidget } from "next-cloudinary";
 import { useState } from "react";
-import { WorkInfo } from "@/lib/data";
-import WorkCard from "./WorkCard";
+import { WorkInfo } from "@/lib/interfaces";
+import Checkform from "./Checkform";
 
-export const SignedUpload = (): JSX.Element => {
+export const SignedUpload = () => {
   const [FileTodb, setFileTodb] = useState<WorkInfo[]>();
-  const changeFormValue = () => {};
 
   return (
     <div className={`grid gap-6 ${FileTodb ? "grid-cols-2" : "grid-cols-1"}`}>
+      {/* how to handle the error from CIduploadWidget  */}
       <CldUploadWidget
         //   Preset is a predefined setting in the user setting
+        // get the signature from the server side
         signatureEndpoint="/api/cloudinarySign"
         uploadPreset="hailinsite"
+        // THEN, front-end
+        // do I need to clean the data onqueuestart
+        // reset at the end of queue
+        // how to show the error, loading, preventdefault, duplicate (covered by the tool?)
         onQueuesEnd={(result, { widget }) => {
           if (result && result.info) {
             const Filesinfo = result?.info?.files;
@@ -31,7 +36,6 @@ export const SignedUpload = (): JSX.Element => {
         }}
         options={{
           sources: ["local", "url"],
-          language: "zh-CN",
           showCompletedButton: true,
         }}
       >
@@ -49,29 +53,7 @@ export const SignedUpload = (): JSX.Element => {
           );
         }}
       </CldUploadWidget>
-      {FileTodb && (
-        <form>
-          {FileTodb.map((work: WorkInfo) => {
-            return (
-              <div key={"wait"}>
-                {Object.entries(work).map(([key, value]) => (
-                  <>
-                    <label htmlFor={key}>{key}:</label>
-                    <input
-                      key={key}
-                      value={value}
-                      name={key}
-                      onChange={changeFormValue}
-                      required
-                    />
-                  </>
-                ))}
-              </div>
-            );
-          })}
-          <button>提交数据</button>
-        </form>
-      )}
+      {FileTodb && <Checkform FileTodb={FileTodb} setFileTodb={setFileTodb} />}
     </div>
   );
 };

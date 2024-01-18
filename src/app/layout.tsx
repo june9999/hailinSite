@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Menu from "./Menu";
-import Footer from "./Footer";
+import Menu from "./Components/Menu";
+import Footer from "./Components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Wang HaiLin',
-      template: '%s | Wang HaiLin '},
-  keywords:"",
+    default: "Wang HaiLin",
+    template: "%s | Wang HaiLin ",
+  },
+  keywords: "",
   description: "The official personal site of Wang Hailin",
 };
 

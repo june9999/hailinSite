@@ -22,5 +22,5 @@ model Work {
   material String
   addedYear Int
   size String
-  img String
+  imgUrl String
 }
