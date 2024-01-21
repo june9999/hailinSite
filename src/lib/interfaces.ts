@@ -6,6 +6,7 @@ export interface WorkInfo {
   addedYear: number;
   size: string;
   imgUrl: string;
+  [key: string]: string | number;
 }
 
 export interface User {

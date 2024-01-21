@@ -1,7 +1,10 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 const Menu = () => {
+  const pathname = usePathname();
   return (
     <header>
       <nav>

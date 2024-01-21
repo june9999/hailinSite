@@ -2,11 +2,7 @@ import React from "react";
 import SignedUpload from "./Components/SignUpload";
 
 const page = () => {
-  return (
-    <div>
-      <SignedUpload />
-    </div>
-  );
+  return <SignedUpload />;
 };
 
 export default page;

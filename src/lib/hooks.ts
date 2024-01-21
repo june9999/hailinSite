@@ -2,22 +2,35 @@
 "use client";
 
 import { useState } from "react";
+import { WorkInfo } from "./interfaces";
 
-export const useFormState = (userMethod: (arg0: FormData) => any) => {
+export const useFormState = (
+  userMethod: (P: any) => Promise<unknown>,
+  otherdata?: WorkInfo[],
+) => {
   const [state, setState] = useState({ error: "", loading: false });
-
   const submitHandler = async (event: any) => {
     event.preventDefault();
     setState({ error: "", loading: true });
+    let result;
     const form = event.currentTarget;
-    const formData = new FormData(form);
-    const result = await userMethod(formData);
+
+    if (otherdata) {
+      result = await userMethod(otherdata);
+      console.log(result);
+    } else {
+      const formData = new FormData(form);
+      result = await userMethod(formData);
+    }
+
     if (result?.error) {
       setState({ error: result.error, loading: false });
     } else {
       setState({ error: "", loading: false });
     }
-    form.reset();
+    if (!otherdata) {
+      form.reset();
+    }
   };
 
   return { submitHandler, state };

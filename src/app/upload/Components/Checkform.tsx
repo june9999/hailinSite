@@ -1,33 +1,43 @@
 "use client";
 import { WorkInfo } from "@/lib/interfaces";
 import { useFormState } from "@/lib/hooks";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { WorksToDB } from "../action";
-//  where we got the value from the response
 
-const Checkform = ({ FileTodb, setFileTodb }) => {
-  const changeFormValue = (event) => {
-    const cpFile = FileTodb;
-    cpFile[event.currentTarget.key].value = event.target;
-    setFileTodb(cpFile);
+type Props = {
+  fileTodb: WorkInfo[];
+  setFileTodb: Dispatch<SetStateAction<WorkInfo[]>>;
+};
+
+const Checkform = ({ fileTodb, setFileTodb }: Props) => {
+  const { state, submitHandler } = useFormState(WorksToDB, fileTodb);
+
+  const changeFormValue = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    key: string,
+    index: number,
+  ) => {
+    setFileTodb((prevFile) => {
+      const cpFile = [...prevFile]; // Create a shallow copy to avoid mutating the state directly
+      cpFile[index][key] = e.target.value;
+      return cpFile;
+    });
   };
 
-  const { state, submitHandler } = useFormState(WorksToDB);
-
-  //   [{name: , material: , ...},{name: , material: , ...},...]
   return (
     <form onSubmit={submitHandler}>
-      {FileTodb.map((work: WorkInfo, index: number) => {
+      {fileTodb.map((work: WorkInfo, index: number) => {
         return (
-          <div key={index}>
-            {Object.entries(work).map(([key, value]) => (
+          <div key={`index+${work.imgUrl}`}>
+            {Object.entries(work).map(([name, value]) => (
               <>
-                <label htmlFor={key}>{key}:</label>
+                <label htmlFor={name}>{name}:</label>
                 <input
-                  key={index}
-                  value={value}
-                  name={key}
-                  onChange={changeFormValue}
+                  name={name}
+                  value={fileTodb[index][name]}
+                  onChange={(e) => {
+                    changeFormValue(e, name, index);
+                  }}
                   required
                 />
               </>
