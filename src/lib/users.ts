@@ -28,6 +28,8 @@ export async function Login({ name, password }: User) {
       const result = await hashCompare(password, res.password);
       console.log(result);
       return Response.json({ message: "user sucssfully logined in" });
+    } else {
+      return Response.json({ error: "Can't find User" });
     }
   } catch (error) {
     console.log(error);
