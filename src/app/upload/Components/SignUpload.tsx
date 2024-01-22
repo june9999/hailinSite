@@ -8,7 +8,7 @@ type resultFiles = {
   files: object[];
 };
 export const SignedUpload = () => {
-  const [fileTodb, setFileTodb] = useState<WorkInfo[]>();
+  const [fileTodb, setFileTodb] = useState<any>();
 
   return (
     <div className={`grid gap-6 ${fileTodb ? "grid-cols-2" : "grid-cols-1"}`}>
