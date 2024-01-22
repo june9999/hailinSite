@@ -1,7 +1,11 @@
 "use client";
 import { useFormState } from "@/lib/hooks";
 // the common form to register or login by changing the method
-const Form = ({ method }) => {
+interface FormProps {
+  method: (P: FormData) => Promise<Response | { error: string }>;
+}
+
+const Form = ({ method }: FormProps) => {
   // event.preventDefault, loading, error, reset, duplicateprevent
 
   const { state, submitHandler } = useFormState(method);
