@@ -4,6 +4,9 @@ import { useState } from "react";
 import { WorkInfo } from "@/lib/interfaces";
 import Checkform from "./Checkform";
 
+type resultFiles = {
+  files: object[];
+};
 export const SignedUpload = () => {
   const [fileTodb, setFileTodb] = useState<WorkInfo[]>();
 
@@ -19,8 +22,9 @@ export const SignedUpload = () => {
         // the error, loading, preventdefault, duplicate (covered by the tool)
         onQueuesEnd={(result, { widget }) => {
           if (result && result.info) {
-            const resultFiles = result?.info?.files;
-            const filesInfo = resultFiles.map((e: any) => {
+            const resultFiles = result?.info as resultFiles;
+            const files = resultFiles.files;
+            const filesInfo = files.map((e: any) => {
               const fileInfo: WorkInfo = {
                 name: e.name.split(/[,.]+/)[0],
                 addedYear: e.name.split(/[,.]+/)[1],
