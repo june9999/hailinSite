@@ -17,5 +17,9 @@
 }
 
 body {
- 
+}
+
+button,
+img {
+  filter: url(#filterRipple);
 }

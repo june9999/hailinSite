@@ -1,10 +1,15 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  console.log("render")
+  console.log("render");
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>Wang HaiLin</div>
-    </main>
+    <>
+      <main
+        id="new"
+        className="flex min-h-screen flex-col items-center bg-cover justify-between bg-[url('./../img/Index.webp')] "
+      >
+        <Link href="/about"> Wang HaiLin</Link>
+      </main>
+    </>
   );
 }
