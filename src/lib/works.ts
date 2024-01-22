@@ -1,4 +1,5 @@
 // Where I deal with Works Collection from db
+import { error } from "console";
 import prisma from "./db";
 import { WorkInfo } from "@/lib/interfaces";
 
@@ -10,7 +11,10 @@ export const addData = async (WorkInfo: WorkInfo) => {
     const res = await prisma.work.create({ data: WorkInfo });
     console.log("successfully created data" + res);
     // Return response to action
-    return Response.json({ message: "work sucssfully created in db" });
+    return Response.json({
+      message: "work sucssfully created in db",
+      error: "",
+    });
   } catch (error) {
     console.log(error);
     return Response.json({ error: "workdata upload failed" });

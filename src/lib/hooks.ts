@@ -3,6 +3,10 @@
 
 import { useState } from "react";
 import { WorkInfo } from "./interfaces";
+interface result {
+  error?: string;
+  message?: string;
+}
 
 export const useFormState = (
   userMethod: (P: any) => Promise<unknown>,
@@ -12,16 +16,17 @@ export const useFormState = (
   const submitHandler = async (event: any) => {
     event.preventDefault();
     setState({ error: "", loading: true });
-    let result;
+    let result: result;
     const form = event.currentTarget;
 
     if (otherdata) {
-      result = await userMethod(otherdata);
+      result = (await userMethod(otherdata)) as result;
       console.log(result);
     } else {
       const formData = new FormData(form);
-      result = await userMethod(formData);
+      result = (await userMethod(formData)) as result;
     }
+    console.log(result);
 
     if (result?.error) {
       setState({ error: result.error, loading: false });
