@@ -24,7 +24,9 @@ export function middleware(request: NextRequest) {
 
   if (pathnameHasLocale) return;
 
-  const locale = getLocale(request);
+  // const locale = getLocale(request);
+  const locale = "en-US";
+
   request.nextUrl.pathname = `/${locale}${pathname}`;
   return Response.redirect(request.nextUrl);
 }

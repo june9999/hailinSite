@@ -8,13 +8,13 @@ interface Dictionaries {
 
 const dictionaries: Dictionaries = {
   de: () => import("./de.json").then((module) => module.default),
-  en: () => import("./en.json").then((module) => module.default),
+  "en-US": () => import("./en.json").then((module) => module.default),
   "zh-cn": () => import("./zh.json").then((module) => module.default),
 };
 
 export const getDictionary = async (locale: string) => {
   console.log(locale);
-  await dictionaries[locale]();
+  return await dictionaries[locale]();
 };
 
 // export const getDictionary = async (locale: string) => {

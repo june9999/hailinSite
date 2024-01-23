@@ -1,5 +1,15 @@
 {
   "products": {
     "cart": "Add to Cart"
+  },
+  "menu": {
+    "Home": "Home",
+    "Name": "Wang Hailin",
+    "About": "About",
+    "Vita": "Vita",
+    "Contact": "Contact"
+  },
+  "footer": {
+    "copyright": "copyright Wang HaiLin 2024"
   }
 }

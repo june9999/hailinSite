@@ -1,7 +1,12 @@
+import { getDictionary } from "../../dictionaries/dictionaries";
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <main className="min-h-screen flex flex-col">
       <Menu />
