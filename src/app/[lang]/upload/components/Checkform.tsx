@@ -2,7 +2,7 @@
 import { WorkInfo } from "@/lib/interfaces";
 import { useFormState } from "@/lib/hooks";
 import React, { Dispatch, SetStateAction } from "react";
-import { WorksToDB } from "../action";
+import { WorksToDB } from "../../../upload/action";
 
 type Props = {
   fileTodb: WorkInfo[];

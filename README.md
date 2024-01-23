@@ -26,11 +26,9 @@
 
 ## Planned Main Features
 
-- backend
-  - simplified and safe uploading
-- frontend
-  - responsive
-  - ...
+- image uploading
+- responsive
+- multiple languages
 
 ## Getting Started
 

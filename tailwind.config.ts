@@ -11,6 +11,9 @@ const config: Config = {
       backgroundImage: {
         "index-photo": "url(./src/Img/Index.webp)",
       },
+      fontFamily: {
+        roboto: ["--font-roboto"],
+      },
     },
   },
   plugins: [],

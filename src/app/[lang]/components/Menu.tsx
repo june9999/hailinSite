@@ -7,9 +7,9 @@ const Menu = () => {
   const pathname = usePathname();
   return (
     <header>
-      <nav>
-        <ul>
-          <li>
+      <nav className=" ">
+        <ul className="flex text-l ">
+          <li className="">
             <Link href="/">Home</Link>
           </li>
           <li>
