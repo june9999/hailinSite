@@ -1,8 +1,15 @@
 import Link from "next/link";
 import { getDictionary } from "../dictionaries/dictionaries";
 
-export default async function Home({ params: { lang } }) {
-  const dict = await getDictionary(lang);
+interface Prop {
+  params: {
+    lang: string;
+  };
+}
+
+export default async function Home(Prop: Prop) {
+  const { params } = Prop;
+  const dict = await getDictionary(params.lang);
 
   return (
     <>

@@ -1,5 +1,5 @@
 import Form from "../Form";
-import { newUserCreate } from "@/app/[lang]/user/action";
+import { newUserCreate } from "../action";
 
 const page = () => {
   return <Form method={newUserCreate} />;

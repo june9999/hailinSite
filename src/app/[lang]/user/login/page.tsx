@@ -1,5 +1,5 @@
 import Form from "../Form";
-import { userLogin } from "@/app/[lang]/user/action";
+import { userLogin } from "../action";
 
 const page = () => {
   return <Form method={userLogin} />;

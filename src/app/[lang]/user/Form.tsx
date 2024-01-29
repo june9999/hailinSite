@@ -1,5 +1,7 @@
 "use client";
-import { useFormState } from "@/lib/hooks";
+
+import { useFormState } from "@/src/lib/hooks";
+
 // the common form to register or login by changing the method
 interface FormProps {
   method: (P: FormData) => Promise<Response | { error: string }>;

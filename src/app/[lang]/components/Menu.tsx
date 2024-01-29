@@ -3,11 +3,15 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 
+interface MenuLinkProps {
+  href: string;
+  name: string;
+}
 const Menu = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const MenuLink = ({ href, name }) => {
+  const MenuLink: React.FC<MenuLinkProps> = ({ href, name }) => {
     const path = pathname.split(/[/]+/)[2];
     return (
       <>
