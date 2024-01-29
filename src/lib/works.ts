@@ -1,7 +1,6 @@
 // Where I deal with Works Collection from db
-import { error } from "console";
 import prisma from "./db";
-import { WorkInfo } from "@/lib/interfaces";
+import { WorkInfo } from "./interfaces";
 
 export const addData = async (WorkInfo: WorkInfo) => {
   console.log("invoking");

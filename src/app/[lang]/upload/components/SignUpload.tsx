@@ -1,7 +1,7 @@
 "use client";
-import { CldUploadWidget } from "next-cloudinary";
+import { WorkInfo } from "@/src/lib/interfaces";
 import { useState } from "react";
-import { WorkInfo } from "@/lib/interfaces";
+import { CldUploadWidget } from "next-cloudinary";
 import Checkform from "./Checkform";
 
 type resultFiles = {

@@ -1,19 +1,7 @@
 "use server";
-import { WorkInfo } from "@/lib/interfaces";
-import { addData } from "@/lib/works";
 
-// export async function WorksToDB(files: WorkInfo[]) {
-//   try {
-//     const res = await files.map(async (e) => await addData(e));
-//     // return response to frontend hook
-//     console.log(res);
-//     console.log(JSON.stringify(res));
-//     return JSON.stringify(res);
-//   } catch (error) {
-//     console.log(error);
-//     return error;
-//   }
-// }
+import { WorkInfo } from "@/src/lib/interfaces";
+import { addData } from "@/src/lib/works";
 
 export async function WorksToDB(files: WorkInfo[]) {
   try {

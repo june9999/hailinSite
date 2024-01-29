@@ -6,8 +6,8 @@ export default async function Home({ params: { lang } }) {
 
   return (
     <>
-      <main>
-        <Link href="/about" className="text-slate-300 text-4xl justify-center">
+      <main className="flex main-background h-full justify-center items-center">
+        <Link href="/home" className=" text-slate-300 text-4xl ">
           {dict.menu.Name}
         </Link>
       </main>

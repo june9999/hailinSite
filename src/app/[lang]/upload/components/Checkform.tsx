@@ -1,8 +1,8 @@
 "use client";
-import { WorkInfo } from "@/lib/interfaces";
-import { useFormState } from "@/lib/hooks";
 import React, { Dispatch, SetStateAction } from "react";
-import { WorksToDB } from "../../../upload/action";
+import { WorksToDB } from "../action";
+import { useFormState } from "@/src/lib/hooks";
+import { WorkInfo } from "@/src/lib/interfaces";
 
 type Props = {
   fileTodb: WorkInfo[];

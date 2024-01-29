@@ -1,5 +1,5 @@
 import React from "react";
-import SignedUpload from "./Components/SignUpload";
+import SignedUpload from "./components/SignUpload";
 
 const page = () => {
   return <SignedUpload />;

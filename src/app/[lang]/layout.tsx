@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
+import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 const inter = Inter({ subsets: ["latin"] });
-const roboto = Roboto({
-  variable: "--font-roboto",
-  weight: "400",
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
 });
 
@@ -24,9 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${roboto.variable} `}>
-        {children}
-      </body>
+      <UserProvider>
+        <body className={`${raleway.variable}`}>{children}</body>
+      </UserProvider>
     </html>
   );
 }

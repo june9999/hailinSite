@@ -12,7 +12,7 @@ const config: Config = {
         "index-photo": "url(./src/Img/Index.webp)",
       },
       fontFamily: {
-        roboto: ["--font-roboto"],
+        roboto: ["--font-raleway"],
       },
     },
   },

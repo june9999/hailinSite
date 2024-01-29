@@ -1,4 +1,4 @@
-import { v2 as cloudinary } from "cloudinary";
+import { cloudinary } from "@/src/lib/cloudinary";
 
 export async function POST(request: Request) {
   const body = await request.json();
