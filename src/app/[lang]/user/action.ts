@@ -3,6 +3,7 @@
 "use server";
 
 import { Login, Register } from "@/src/lib/users";
+import { redirect } from "next/dist/server/api-utils";
 
 // overall, serve side - 1. validation 2. call the db
 
@@ -14,7 +15,7 @@ export async function newUserCreate(formData: FormData) {
     name: formData.get("name") as string,
     password: formData.get("password") as string,
   });
-  return result;
+  return "successfully";
 }
 
 export async function userLogin(formData: FormData) {
@@ -25,5 +26,5 @@ export async function userLogin(formData: FormData) {
     name: formData.get("name") as string,
     password: formData.get("password") as string,
   });
-  return result;
+  return "successfully";
 }

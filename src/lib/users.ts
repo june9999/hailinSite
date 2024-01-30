@@ -9,10 +9,13 @@ export async function Register({ name, password }: User) {
     const newUser = { data: { name: name, password: password } };
     const res = await prisma.user.create(newUser);
     console.log(res);
-    return Response.json({ message: "user sucssfully created", error: "" });
+    return Response.json(
+      { message: "user sucssfully created", error: "" },
+      { status: 200 },
+    );
   } catch (error) {
     console.log(error);
-    return Response.json({ error: "register failed" });
+    return Response.json({ error: "register failed" }, { status: 404 });
   }
 }
 
@@ -27,16 +30,13 @@ export async function Login({ name, password }: User) {
     if (res && res.password.length > 0) {
       const result = await hashCompare(password, res.password);
       console.log(result);
-      return Response.json({
-        message: "user sucssfully logined in",
-        error: "",
-      });
+      return Response;
     } else {
-      return Response.json({ error: "Can't find User" });
+      return Response;
     }
   } catch (error) {
     console.log(error);
-    return Response.json({ error: "login in failed" });
+    return Response;
   }
 }
 
