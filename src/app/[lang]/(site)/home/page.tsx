@@ -17,7 +17,7 @@ const page = () => {
         <img
           className="w-[30rem] pt-[2rem]"
           src="https://res.cloudinary.com/dcfs6js7g/image/upload/v1706538599/Karussell_25_2021_%C3%96l_und_Acryl_auf_Leinwand_22x30cm_zrojto.jpg"
-          art="try"
+          alt="try"
         />
       </div>
       <div className="flex pt-[2rem] md:pl-[10rem] gap-x-[7rem] md:relative md:top-[-7rem] ">
