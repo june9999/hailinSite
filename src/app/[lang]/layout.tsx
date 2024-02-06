@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body className={`${raleway.variable} min-h-screen`}>{children}</body>
+        <body className={`${raleway.variable} min-h-screen `}>{children}</body>
       </UserProvider>
     </html>
   );

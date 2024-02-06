@@ -1,10 +1,8 @@
-import Image from "next/image";
-
 const page = () => {
   return (
     <div className="w-[50%] flex flex-col m-auto rounded-md text-[#333] font-[sans-serif]">
       <div className="p-4">
-        <h1 className="text-3xl font-extrabold">Let's Talk</h1>
+        <h1 className="text-3xl font-extrabold">Let&apos;s Talk</h1>
         <p className="text-sm text-gray-400 mt-3">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus nihil
           neque est aut a? Culpa pariatur fugiat rem! Modi inventore ut

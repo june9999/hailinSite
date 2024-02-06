@@ -11,7 +11,11 @@ export const SignedUpload = () => {
   const [fileTodb, setFileTodb] = useState<any>();
 
   return (
-    <div className={`grid gap-6 ${fileTodb ? "grid-cols-2" : "grid-cols-1"}`}>
+    <div
+      className={`flex flex-col w-full gap-6 ${
+        fileTodb ? "grid-cols-2" : "grid-cols-1"
+      }`}
+    >
       {/* how to handle the error from CIduploadWidget  */}
       <CldUploadWidget
         // get the signature from the server side
@@ -50,8 +54,13 @@ export const SignedUpload = () => {
             open();
           }
           return (
-            <p className="flex items-center justify-center h-full">
-              <button onClick={handleOnClick}>Upload an Image</button>
+            <p className="flex items-center justify-center h-full w-full">
+              <button
+                className=" relative h-12 w-48 overflow-hidden rounded-2xl bg-gray-500 text-lg font-bold text-white"
+                onClick={handleOnClick}
+              >
+                Upload any Image
+              </button>
             </p>
           );
         }}

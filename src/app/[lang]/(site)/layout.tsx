@@ -1,5 +1,3 @@
-import { getDictionary } from "../../dictionaries/dictionaries";
-import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 
 export default async function Layout({

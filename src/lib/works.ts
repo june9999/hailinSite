@@ -1,4 +1,5 @@
 // Where I deal with Works Collection from db
+import { NextResponse } from "next/server";
 import prisma from "./db";
 import { WorkInfo } from "./interfaces";
 
@@ -34,8 +35,8 @@ export const deleteData = async (id: string) => {
         id: id,
       },
     });
-
     console.log("successfully delete data" + res);
+    return Response.json({ res });
   } catch (error) {
     console.log(error);
     throw new Error("unable to connect to db");
@@ -52,7 +53,6 @@ export const getDataUnique = async (key: string) => {
         [key]: "desc",
       },
     });
-    console.log(res);
     const newr = res.map((e) => e[key]);
     const newRes = new Set(newr);
     console.log(newRes);

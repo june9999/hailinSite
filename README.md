@@ -2,7 +2,11 @@
 
 ## Status
 
-- working on backend
+- Continuously Improvement
+
+1. add multiple language
+2. change styles
+3. add more admin function
 
 ## Focus:
 
