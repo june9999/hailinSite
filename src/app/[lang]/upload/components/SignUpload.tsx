@@ -15,12 +15,13 @@ export const SignedUpload = () => {
       {/* how to handle the error from CIduploadWidget  */}
       <CldUploadWidget
         // get the signature from the server side
-        signatureEndpoint="/api/cloudinarySign"
+        // signatureEndpoint="/api/cloudinarySign"
         //   Preset is a predefined setting in the user setting
         uploadPreset="hailinsite"
         // THEN,
         // the error, loading, preventdefault, duplicate (covered by the tool)
         onQueuesEnd={(result, { widget }) => {
+          console.log(result);
           if (result && result.info) {
             const resultFiles = result?.info as resultFiles;
             const files = resultFiles.files;

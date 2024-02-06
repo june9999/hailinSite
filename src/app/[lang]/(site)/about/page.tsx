@@ -4,7 +4,7 @@ import React from "react";
 const About = () => {
   return (
     <div className="flex justify-center items-center ">
-      <div>
+      <div className="w-[50%]">
         <p>Hailin Li is a Chinese artise from NingBo, China. </p>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
@@ -19,7 +19,7 @@ const About = () => {
           magnam quas harum incidunt.
         </p>
       </div>
-      <div className="h-[30rem] w-[40rem] border-4">Image</div>
+      <div className="w-[50%] h-[30rem]  border-4 m-[2rem]">Image</div>
     </div>
   );
 };
